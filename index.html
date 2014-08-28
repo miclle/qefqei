@@ -8,10 +8,8 @@
 
     <script>
       var app = angular.module("myapp", ['ngRoute']).config(function($routeProvider) {
-        $routeProvider.when('/', {
-          templateUrl: 'templates/name.html',
-          controller:'NameController'
-        });
+        $routeProvider.when('/', { templateUrl: 'templates/name.html', controller:'NameController'});
+        $routeProvider.when('/about', { templateUrl: 'templates/about.html'});
       });
     </script>
 
