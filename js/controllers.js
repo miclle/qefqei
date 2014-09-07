@@ -1,30 +1,17 @@
-app.controller('SideController', function($scope, nameFactory) {
+app.controller('SideController', ['$scope', 'nameFactory', function($scope, nameFactory) {
   $scope.names = [];
 
-  var init = function() {
-    nameFactory.getName.success(function(data) {
-      $scope.names = data;
-    });
-  };
-
-  init();
-});
+  nameFactory.getName.success(function(data) {
+    $scope.names = data;
+  });
+}]);
 
 
-app.controller('ShowController', function($scope) {
-  console.log('show')
-  // $scope.names = [];
+app.controller('ShowController', ['$scope', '$routeParams', 'docFactory', function($scope, $routeParams, docFactory) {
+  $scope.name = $routeParams.name
 
-  // var init = function() {
-  //   nameFactory.getName.success(function(data) {
-  //     $scope.names = data;
-  //   });
-  // };
+  docFactory.getDoc($scope.name).success(function(data) {
+    $scope.content = data;
+  });
 
-  // init();
-
-  // $scope.addComment = function(comment, i) {
-  //   $scope.feed[i].comments.push(comment);
-  //   $scope.newComment = '';
-  // };
-});
+}]);
