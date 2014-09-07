@@ -5,8 +5,8 @@ angular.module('customFilters.markdown', []).filter('markdown', function() {
   }
 });
 
-angular.module('customFilters.trust', []).filter('trust', function($sce) {
+angular.module('customFilters.trust', []).filter('trust', ['$sce', function($sce) {
   return function(input) {
     return $sce.trustAsHtml(input || '');
   }
-});
+}]);
