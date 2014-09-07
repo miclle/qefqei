@@ -1,4 +1,4 @@
-# arguments[] _ECMAScript v1_
+# arguments[ ] _ECMAScript v1_
 
 函数参数的数组
 

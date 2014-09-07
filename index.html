@@ -17,7 +17,7 @@
         </div>
 
         <div class="group" id="tree">
-          <a ng-repeat="name in names | filter: filterField" ng-href="#/{{name}}" ng-attr-title="{{name}}" ng-bind="name"></a>
+          <a ng-repeat="item in items | filter: filterField | orderBy:'name'" ng-href="/{{item.name}}" ng-attr-title="{{item.intro}}" ng-bind="item.name"></a>
         </div>
       </div>
 

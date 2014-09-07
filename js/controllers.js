@@ -1,16 +1,13 @@
 app.controller('SideController', ['$scope', 'nameFactory', function($scope, nameFactory) {
-  $scope.names = [];
-
+  $scope.items = [];
   nameFactory.getName.success(function(data) {
-    $scope.names = data;
+    $scope.items = data;
   });
 }]);
 
 
 app.controller('ShowController', ['$scope', '$routeParams', 'docFactory', function($scope, $routeParams, docFactory) {
-  $scope.name = $routeParams.name
-
-  docFactory.getDoc($scope.name).success(function(data) {
+  docFactory.getDoc($routeParams.name).success(function(data) {
     $scope.content = data;
   });
 
