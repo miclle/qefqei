@@ -2,22 +2,30 @@
   <head>
     <title>Angular</title>
 
+    <link rel="stylesheet" href="css/app.css">
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-route.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min.js"></script>
-
-    <script>
-      var app = angular.module("myapp", ['ngRoute']).config(function($routeProvider) {
-        $routeProvider.when('/', { templateUrl: 'templates/name.html', controller:'NameController'});
-        $routeProvider.when('/about', { templateUrl: 'templates/about.html'});
-      });
-    </script>
-
   </head>
   <body>
 
-    <section ng-view></section>
+    <section>
+      <div class="sidebar" ng-controller="SideController">
+        <div class="search">
+          <input type="Search" ng-model="filterField">
+        </div>
 
+        <ul class="tree">
+          <li ng-repeat="name in names | filter: filterField">
+            <a ng-href="#/{{name}}" ng-attr-title="{{name}}" ng-bind="name"></a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="main" ng-view></div>
+    </section>
+
+    <script src="js/app.js"></script>
     <script src="js/filters.js"></script>
     <script src="js/factories.js"></script>
     <script src="js/controllers.js"></script>

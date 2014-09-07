@@ -1,9 +1,0 @@
-<div ng-controller="NameController">
-  <div>
-    <input type="text" ng-model="filterField">
-  </div>
-
-  <ul class="name-list">
-    <li ng-repeat="name in names | filter: filterField">{{ name }}</li>
-  </ul>
-</div>
