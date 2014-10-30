@@ -17,3 +17,6 @@
 * RegExp
 * String
 * Function
+
+#License
+Code released under the MIT license.
