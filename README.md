@@ -1,6 +1,6 @@
-#核心 JavaScript 参考手册
+# 核心 JavaScript 参考手册
 
-####这里是 JavaScript 核心 API 中的所有类、属性、函数、方法和事件处理程序的完整参考。
+#### 这里是 JavaScript 核心 API 中的所有类、属性、函数、方法和事件处理程序的完整参考。
 
 * Arguments
 * Array
@@ -18,5 +18,5 @@
 * String
 * Function
 
-#License
+# License
 Code released under the MIT license.
